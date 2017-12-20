@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Actor
+Bundle-SymbolicName: org.javacream.training.osgi.greeter.actor
+Bundle-Version: 1.0.0
+Bundle-Activator: org.javacream.training.osgi.greeter.actor.Activator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.javacream.training.osgi.greeter,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
