@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.javacream.training.osgi.demo
+Bundle-SymbolicName: org.javacream.training.osgi.demo
+Bundle-Version: 0.0.0
+Bundle-Vendor: Javacream
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: org.javacream.training.osgi.demo.EchoActivator
+Import-Package: org.osgi.framework;version="1.5.0"
+Export-Package: org.javacream.training.osgi.demo

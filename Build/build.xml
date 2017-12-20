@@ -1,0 +1,26 @@
+<project default="all">
+	<property name="osgi-runtime.dir" value="C:/_training/tools/osgi-runtime/bin" />
+	<!--
+	<property name="deploy.dist.dir" value="${osgi-runtime.dir}/load" />
+	-->
+	<property name="deploy.dist.dir" value="c:/_training/deploy" />
+	
+	<target name="all">
+		<delete failonerror="false">
+			<fileset dir="." includes="${file.name}" />
+		</delete>
+		<jar destfile="${file.name}" manifest="META-INF/MANIFEST.MF">
+			<zipfileset dir="bin" includes="**/*.*" />
+			<zipfileset dir="lib" includes="*.jar" prefix="lib" />
+			
+		</jar>
+		<copy todir="${deploy.dist.dir}" overwrite="true">
+			<fileset dir="." includes="${file.name}">
+			</fileset>
+		</copy>
+		<delete>
+			<fileset dir="." includes="${file.name}">
+			</fileset>
+		</delete>
+	</target>
+</project>
