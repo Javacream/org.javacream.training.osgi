@@ -1,0 +1,4 @@
+<project default="all" basedir=".">
+	<property name="file.name" value="org.javacream.training.osgi.greeter.actor-1.1.0.jar" />
+	<import file="../Build/build.xml" />
+</project>

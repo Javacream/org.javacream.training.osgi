@@ -10,6 +10,6 @@ Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: lib/org.javacream-training.demo.jar,
  .
 Export-Package: org.javacream.training.demo,
- org.javacream.training.util.id,
- org.javacream.util.reflection
+ org.javacream.training.util.id;version="1.0.0",
+ org.javacream.util.reflection;version="1.0.0"
 DynamicImport-Package: *
