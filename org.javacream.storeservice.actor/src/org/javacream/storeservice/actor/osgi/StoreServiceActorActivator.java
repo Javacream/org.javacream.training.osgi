@@ -1,27 +1,24 @@
 package org.javacream.storeservice.actor.osgi;
 
-import java.util.Collection;
-
 import org.javacream.storeservice.actor.StoreServiceActor;
 import org.javacream.storeservice.api.StoreService;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
+import org.osgi.framework.Filter;
+import org.osgi.util.tracker.ServiceTracker;
 public class StoreServiceActorActivator implements BundleActivator{
 
 	private StoreServiceActor actor;
 
 	@Override
 	public void start(BundleContext bundleContext) throws Exception {
-		Collection<ServiceReference<StoreService>> storeServiceReferences = bundleContext.getServiceReferences(StoreService.class, null);
-		System.out.println("Available StoreServices are:");
-		for (ServiceReference<StoreService> storeServiceReference: storeServiceReferences){
-			System.out.println("\t type=" + storeServiceReference.getProperty("type"));
-		}
-		Collection<ServiceReference<StoreService>> references = bundleContext.getServiceReferences(StoreService.class, "(&(type=book))");
-		StoreService storeService = bundleContext.getService(references.iterator().next());
 		actor = new StoreServiceActor();
-		actor.setStoreService(storeService);
+		Filter filter = bundleContext.createFilter("(&(objectClass=org.javacream.storeservice.api.StoreService)(type=dvd))");
+		ServiceTracker<StoreService, StoreService> storeServiceTracker = new ServiceTracker<StoreService, StoreService>(bundleContext, filter, null);
+		storeServiceTracker.open();
+		StoreServiceProxy proxy = new StoreServiceProxy();
+		proxy.setStoreServiceTracker(storeServiceTracker);
+		actor.setStoreService(proxy);
 		actor.startup();
 		
 	}
