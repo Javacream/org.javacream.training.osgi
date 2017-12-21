@@ -4,7 +4,6 @@ Bundle-Name: org.javacream.storeservice.impl
 Bundle-SymbolicName: org.javacream.storeservice.impl
 Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Activator: org.javacream.storeservice.impl.osgi.StoreServiceActivator
 Import-Package: org.javacream.storeservice.api,
  org.osgi.framework;version="1.8.0"
 Export-Package: org.javacream.storeservice.impl
