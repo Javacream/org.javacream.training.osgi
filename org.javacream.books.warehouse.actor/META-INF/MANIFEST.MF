@@ -6,10 +6,8 @@ Bundle-Version: 1.0.0
 Bundle-Activator: org.javacream.books.warehouse.actor.osgi.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.javacream.books.warehouse.api,
- org.javacream.books.warehouse.business,
+ org.javacream.books.warehouse.context,
  org.javacream.isbngenerator,
  org.javacream.storeservice.api,
- org.javacream.storeservice.impl,
- org.osgi.framework;version="1.8.0",
- org.osgi.framework.startlevel;version="1.0.0"
+ org.osgi.framework;version="1.8.0"
 Bundle-ActivationPolicy: lazy

@@ -7,14 +7,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BookException;
-import org.javacream.books.warehouse.business.MapBooksService;
-import org.javacream.isbngenerator.IsbnGenerator;
-import org.javacream.isbngenerator.IsbnGeneratorFactory;
-import org.javacream.storeservice.impl.BooksStoreService;
+import org.javacream.books.warehouse.api.BooksService;
+import org.javacream.books.warehouse.context.BooksServiceFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
+
+	private ScheduledExecutorService executorService;
 
 	/*
 	 * (non-Javadoc)
@@ -24,17 +24,12 @@ public class Activator implements BundleActivator {
 	 * )
 	 */
 	public void start(BundleContext context) throws Exception {
-		ScheduledExecutorService executorService = Executors
+		executorService = Executors
 				.newScheduledThreadPool(1);
 		executorService
 				.schedule(
 						() -> {
-							MapBooksService booksService = new MapBooksService();
-							BooksStoreService booksStoreService = new BooksStoreService();
-							IsbnGenerator isbnGenerator = IsbnGeneratorFactory
-									.getIsbnGenerator();
-							booksService.setIsbnGenerator(isbnGenerator);
-							booksService.setStoreService(booksStoreService);
+							BooksService booksService = BooksServiceFactory.getBooksService();
 							System.out.println(booksService);
 							try {
 								String isbn = booksService.newBook(
@@ -56,6 +51,7 @@ public class Activator implements BundleActivator {
 	 * org.osgi.framework.BundleActivator#stop(org.osgi.framework.BundleContext)
 	 */
 	public void stop(BundleContext context) throws Exception {
+		executorService.shutdown();
 	}
 
 }
