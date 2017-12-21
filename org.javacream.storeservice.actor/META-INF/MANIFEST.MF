@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.javacream.storeservice.actor
+Bundle-SymbolicName: org.javacream.storeservice.actor
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Activator: org.javacream.storeservice.actor.osgi.StoreServiceActorActivator
