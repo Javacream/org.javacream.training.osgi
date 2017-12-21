@@ -1,9 +1,8 @@
 <project default="all">
-	<property name="osgi-runtime.dir" value="C:/_training/tools/osgi-runtime/bin" />
+	<property name="deploy.dist.dir" value="C:/_training/tools/apache-karaf-4.0.2/deploy" />
 	<!--
-	<property name="deploy.dist.dir" value="${osgi-runtime.dir}/load" />
-	-->
 	<property name="deploy.dist.dir" value="c:/_training/deploy" />
+	-->
 	
 	<target name="all">
 		<delete failonerror="false">
