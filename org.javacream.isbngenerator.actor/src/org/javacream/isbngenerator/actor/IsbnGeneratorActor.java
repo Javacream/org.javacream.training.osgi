@@ -4,8 +4,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.javacream.isbngenerator.api.IsbnGenerator;
-import org.javacream.isbngenerator.api.IsbnGeneratorFactory;
+import org.javacream.isbngenerator.IsbnGenerator;
+import org.javacream.isbngenerator.IsbnGeneratorFactory;
 
 public class IsbnGeneratorActor {
 

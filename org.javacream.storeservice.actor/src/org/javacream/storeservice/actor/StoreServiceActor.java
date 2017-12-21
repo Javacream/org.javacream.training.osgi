@@ -4,7 +4,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.javacream.storeservice.StoreService;
+import org.javacream.storeservice.api.StoreService;
 
 public class StoreServiceActor {
 

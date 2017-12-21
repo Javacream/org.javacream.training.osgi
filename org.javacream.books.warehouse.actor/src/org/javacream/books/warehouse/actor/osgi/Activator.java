@@ -2,11 +2,13 @@ package org.javacream.books.warehouse.actor.osgi;
 
 import java.util.HashMap;
 
-import org.javacream.books.warehouse.api.BooksService;
 import org.javacream.books.warehouse.api.Book;
+import org.javacream.books.warehouse.business.MapBooksService;
+import org.javacream.isbngenerator.IsbnGenerator;
+import org.javacream.isbngenerator.IsbnGeneratorFactory;
+import org.javacream.storeservice.impl.BooksStoreService;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.ServiceReference;
 
 public class Activator implements BundleActivator {
 
@@ -16,7 +18,14 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext context) throws Exception {
 		
-		BooksService booksService =  null;
+		MapBooksService booksService =  new MapBooksService();
+		BooksStoreService booksStoreService = new BooksStoreService();
+		IsbnGenerator isbnGenerator = null;
+		while(isbnGenerator == null){
+			isbnGenerator = IsbnGeneratorFactory.getIsbnGenerator();
+		}
+		booksService.setIsbnGenerator(isbnGenerator);
+		booksService.setStoreService(booksStoreService);
 		System.out.println(booksService);
 
 		String isbn = booksService.newBook("OSGi in Action",
