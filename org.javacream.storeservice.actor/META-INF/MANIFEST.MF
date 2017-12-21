@@ -4,8 +4,8 @@ Bundle-Name: org.javacream.storeservice.actor
 Bundle-SymbolicName: org.javacream.storeservice.actor
 Bundle-Version: 1.0.0
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-Activator: org.javacream.storeservice.actor.osgi.StoreServiceActorActivator
 Import-Package: org.javacream.storeservice.api,
  org.osgi.framework;version="1.8.0",
  org.osgi.util.tracker;version="1.5.1"
 Bundle-ActivationPolicy: lazy
+Bundle-Blueprint: OSGI-INF/store-client.xml

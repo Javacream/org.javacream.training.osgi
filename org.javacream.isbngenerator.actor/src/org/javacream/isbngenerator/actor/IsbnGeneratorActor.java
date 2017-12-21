@@ -5,14 +5,18 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 import org.javacream.isbngenerator.IsbnGenerator;
-import org.javacream.isbngenerator.IsbnGeneratorFactory;
 
 public class IsbnGeneratorActor {
 
-	private IsbnGenerator isbnGenerator = IsbnGeneratorFactory.isbnGenerator;
 	private ScheduledExecutorService executorService;
+
+	private IsbnGenerator isbnGenerator;
 	
 	
+	public void setIsbnGenerator(IsbnGenerator isbnGenerator) {
+		this.isbnGenerator = isbnGenerator;
+	}
+
 	public void startup(){
 		executorService = Executors.newScheduledThreadPool(1);
 		executorService.scheduleAtFixedRate(new Runnable(){

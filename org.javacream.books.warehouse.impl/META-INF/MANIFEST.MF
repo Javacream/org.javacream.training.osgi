@@ -9,5 +9,4 @@ Import-Package: org.apache.commons.lang3,
  org.javacream.isbngenerator,
  org.javacream.storeservice.api,
  org.osgi.framework;version="1.8.0"
-Export-Package: org.javacream.books.warehouse.context
-Bundle-Activator: org.javacream.books.warehouse.osgi.BooksServiceActivator
+Bundle-Blueprint: OSGI-INF/booksservice.xml
