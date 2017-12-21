@@ -24,24 +24,22 @@ public class Activator implements BundleActivator {
 	 * )
 	 */
 	public void start(BundleContext context) throws Exception {
-		executorService = Executors
-				.newScheduledThreadPool(1);
-		executorService
-				.schedule(
-						() -> {
-							BooksService booksService = BooksServiceFactory.getBooksService();
-							System.out.println(booksService);
-							try {
-								String isbn = booksService.newBook(
-										"OSGi in Action",
-										new HashMap<String, Object>());
-								Book book = booksService.findBookByIsbn(isbn);
+		executorService = Executors.newScheduledThreadPool(1);
+		executorService.schedule(
+				() -> {
+					BooksService booksService = BooksServiceFactory
+							.getBooksService();
+					System.out.println(booksService);
+					try {
+						String isbn = booksService.newBook("OSGi in Action",
+								new HashMap<String, Object>());
+						Book book = booksService.findBookByIsbn(isbn);
 
-								System.out.println("New book: " + book);
-							} catch (BookException e) {
-								e.printStackTrace();
-							}
-						}, 4, TimeUnit.SECONDS);
+						System.out.println("New book: " + book);
+					} catch (BookException e) {
+						e.printStackTrace();
+					}
+				}, 4, TimeUnit.SECONDS);
 	}
 
 	/*
