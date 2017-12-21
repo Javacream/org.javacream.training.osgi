@@ -20,10 +20,7 @@ public class Activator implements BundleActivator {
 		
 		MapBooksService booksService =  new MapBooksService();
 		BooksStoreService booksStoreService = new BooksStoreService();
-		IsbnGenerator isbnGenerator = null;
-		while(isbnGenerator == null){
-			isbnGenerator = IsbnGeneratorFactory.getIsbnGenerator();
-		}
+		IsbnGenerator isbnGenerator = IsbnGeneratorFactory.getIsbnGenerator();
 		booksService.setIsbnGenerator(isbnGenerator);
 		booksService.setStoreService(booksStoreService);
 		System.out.println(booksService);
