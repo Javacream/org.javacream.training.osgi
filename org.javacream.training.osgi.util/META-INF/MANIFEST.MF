@@ -7,11 +7,9 @@ Bundle-Activator: org.javacream.training.osgi.util.Activator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.osgi.framework
 Bundle-ActivationPolicy: lazy
-Bundle-ClassPath: lib/org.javacream-training.demo.jar,
- .,
- lib/commons-lang3-3.0.jar
+Bundle-ClassPath: .,
+ lib/commons-lang3-3.7.jar
 Export-Package: org.apache.commons.lang3,
- org.javacream.training.demo,
  org.javacream.training.util.id;version="1.0.0",
  org.javacream.util.reflection;version="1.0.0"
 DynamicImport-Package: *
