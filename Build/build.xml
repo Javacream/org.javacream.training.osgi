@@ -11,7 +11,7 @@
 		</delete>
 		<jar destfile="${file.name}" manifest="META-INF/MANIFEST.MF">
 			<zipfileset dir="bin" includes="**/*.*" />
-			<zipfileset dir="lib" includes="*.jar" prefix="lib" />
+			<zipfileset dir="lib" includes="*.jar" prefix="lib" erroronmissingdir="false"/>
 			
 		</jar>
 		<copy todir="${deploy.dist.dir}" overwrite="true">
