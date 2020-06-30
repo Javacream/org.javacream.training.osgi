@@ -1,0 +1,4 @@
+<project default="all" basedir=".">
+	<property name="file.name" value="simple.jar" />
+	<import file="../Build/build.xml" />
+</project>

@@ -9,7 +9,7 @@ public class EchoActivator implements BundleActivator {
 	public void start(BundleContext bundleContext) throws Exception {
 		System.out.println("Hello, starting " + this);
 		EchoBusinessObject echoBusinessObject = new EchoBusinessObject();
-		System.out.println(echoBusinessObject.doSomething("hello"));
+		System.out.println(echoBusinessObject.doSomething("Moon"));
 	}
 	
 
