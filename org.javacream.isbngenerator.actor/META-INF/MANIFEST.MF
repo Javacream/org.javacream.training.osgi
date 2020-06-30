@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.javacream.isbngenerator.actor
+Bundle-SymbolicName: org.javacream.isbngenerator.actor
+Bundle-Version: 1.0.0
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.javacream.isbngenerator;version="[1.0.0,2.0.0)",
+ org.osgi.framework
+Bundle-ActivationPolicy: lazy
+Bundle-Blueprint: OSGI-INF/isbngenerator-client.xml
+Bundle-Activator: org.javacream.isbngenerator.actor.IsbnGeneratorActor
