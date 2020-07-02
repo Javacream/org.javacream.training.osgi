@@ -1,0 +1,4 @@
+<project default="all">
+	<property name="file.name" value="org.javacream.books.warehouse.actor-1.0.0.jar" />
+	<import file="../Build/build.xml" />
+</project>
