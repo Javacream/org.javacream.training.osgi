@@ -1,4 +1,0 @@
-<project default="all" basedir=".">
-	<property name="file.name" value="org.javacream.training.osgi.demo.lib-0.0.jar" />
-	<import file="../Build/build.xml" />
-</project>
