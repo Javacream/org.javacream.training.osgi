@@ -10,7 +10,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
 
-public class BooksStoreServiceActivator implements BundleActivator {
+public class IsbnGeneratorActivator implements BundleActivator {
 
 	private ServiceRegistration<IsbnGenerator> serviceReferenceRandom;
 	private ServiceRegistration<IsbnGenerator> serviceReferenceSequence;
@@ -25,6 +25,7 @@ public class BooksStoreServiceActivator implements BundleActivator {
 		typeSequence.put("type", "sequence");
 		serviceReferenceRandom = bundleContext.registerService(IsbnGenerator.class, randomIsbnGenerator, typeRandom);
 		serviceReferenceSequence = bundleContext.registerService(IsbnGenerator.class, sequenceIsbnGenerator, typeSequence);
+		System.out.println("registering services done");
 	}
 
 	@Override

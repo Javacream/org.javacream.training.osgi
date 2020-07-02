@@ -7,3 +7,4 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: org.javacream.storeservice.api,
  org.osgi.framework;version="1.8.0"
 Bundle-Blueprint: OSGI-INF/store.xml
+Bundle-Activator: org.javacream.storeservice.osgi.BooksStoreServiceActivator

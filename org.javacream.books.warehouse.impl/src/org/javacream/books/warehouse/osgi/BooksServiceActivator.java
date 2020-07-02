@@ -21,7 +21,7 @@ public class BooksServiceActivator implements BundleActivator {
 		ServiceReference<StoreService> storeServiceReference;
 		ServiceReference<IsbnGenerator> isbnGeneratorServiceReference;
 		storeServiceReference = bundleContext.getServiceReferences(StoreService.class, "(&(type=book))").iterator().next();
-		isbnGeneratorServiceReference = bundleContext.getServiceReference(IsbnGenerator.class);
+		isbnGeneratorServiceReference = bundleContext.getServiceReferences(IsbnGenerator.class, "(&(type=random))").iterator().next();
 		StoreService storeService = bundleContext.getService(storeServiceReference); 
 		
 		IsbnGenerator isbnGenerator = bundleContext.getService(isbnGeneratorServiceReference); 
