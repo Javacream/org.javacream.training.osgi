@@ -3,12 +3,10 @@ package org.javacream.books.warehouse.business;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.commons.lang3.SerializationUtils;
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BooksService;
 import org.javacream.isbngenerator.IsbnGenerator;
 import org.javacream.storeservice.api.StoreService;
-import org.javacream.storeservice.api.StoreServiceFactory;
 
 /**
  * @author Dr. Rainer Sawitzki
@@ -19,8 +17,16 @@ import org.javacream.storeservice.api.StoreServiceFactory;
 
 public class MapBooksService implements BooksService {
 
-	private IsbnGenerator isbnGenerator = IsbnGenerator.create();
-	private StoreService storeService = StoreServiceFactory.create();
+	private IsbnGenerator isbnGenerator;
+	private StoreService storeService;
+	public void setIsbnGenerator(IsbnGenerator isbnGenerator) {
+		this.isbnGenerator = isbnGenerator;
+	}
+
+	public void setStoreService(StoreService storeService) {
+		this.storeService = storeService;
+	}
+
 	private Map<String, Book> books = new HashMap<String, Book>();
 
 	public MapBooksService() {
@@ -45,7 +51,6 @@ public class MapBooksService implements BooksService {
 		if (result != null) {
 			int stock = storeService.getStock(isbn);
 			result.setAvailable(stock > 0);
-			result = (Book) SerializationUtils.clone(result);
 		}
 		return result;
 	}

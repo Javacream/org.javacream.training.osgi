@@ -2,7 +2,6 @@ package org.javacream.books.warehouse.actor.osgi;
 
 import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BooksService;
-import org.javacream.books.warehouse.api.BooksServiceFactory;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
@@ -13,7 +12,7 @@ public class Activator implements BundleActivator {
 	 * @see org.osgi.framework.BundleActivator#start(org.osgi.framework.BundleContext)
 	 */
 	public void start(BundleContext context) throws Exception {
-		BooksService booksService =  BooksServiceFactory.create();
+		BooksService booksService = context.getService(context.getServiceReference(BooksService.class));
 		System.out.println(booksService);
 
 		Book book = booksService.newBook("OSGi in Action",
