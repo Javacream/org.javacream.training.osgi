@@ -8,6 +8,7 @@ import org.javacream.books.warehouse.api.Book;
 import org.javacream.books.warehouse.api.BooksService;
 import org.javacream.isbngenerator.IsbnGenerator;
 import org.javacream.storeservice.api.StoreService;
+import org.javacream.storeservice.api.StoreServiceFactory;
 
 /**
  * @author Dr. Rainer Sawitzki
@@ -18,8 +19,8 @@ import org.javacream.storeservice.api.StoreService;
 
 public class MapBooksService implements BooksService {
 
-	private IsbnGenerator isbnGenerator;
-	private StoreService storeService;
+	private IsbnGenerator isbnGenerator = IsbnGenerator.create();
+	private StoreService storeService = StoreServiceFactory.create();
 	private Map<String, Book> books = new HashMap<String, Book>();
 
 	public MapBooksService() {

@@ -11,3 +11,4 @@ Import-Package: org.apache.commons.lang3,
  org.osgi.framework;version="1.8.0"
 Export-Package: org.javacream.books.warehouse.api,
  org.javacream.books.warehouse.business
+Require-Bundle: org.javacream.storeservice.impl;bundle-version="1.0.0"
