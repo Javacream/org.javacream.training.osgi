@@ -5,7 +5,7 @@ import org.javacream.storeservice.api.StoreService;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
-@Component
+@Component(property = "type=book")
 public class BooksStoreService implements StoreService{
 	private int stock = 42;
 

@@ -4,7 +4,7 @@ import org.javacream.isbngenerator.IsbnGenerator;
 
 public class SequenceIsbnGenerator implements IsbnGenerator{
 
-	private static int counter = 0;
+	private static int counter = 42;
 	/* (non-Javadoc)
 	 * @see org.javacream.isbngenerator.impl.IsbnGenerator#nextIsbn()
 	 */

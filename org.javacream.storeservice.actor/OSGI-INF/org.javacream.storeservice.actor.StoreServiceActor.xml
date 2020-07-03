@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" activate="startUp" immediate="true" name="org.javacream.storeservice.actor.StoreServiceActor">
-   <reference cardinality="1..1" field="storeService" interface="org.javacream.storeservice.api.StoreService" name="storeService"/>
+   <reference cardinality="1..1" field="storeService" interface="org.javacream.storeservice.api.StoreService" name="storeService" target="(type=book)"/>
    <implementation class="org.javacream.storeservice.actor.StoreServiceActor"/>
 </scr:component>

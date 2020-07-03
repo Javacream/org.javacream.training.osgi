@@ -8,7 +8,7 @@ import org.osgi.service.component.annotations.Reference;
 @Component(immediate = true)
 public class StoreServiceActor {
 
-	@Reference private StoreService storeService;
+	@Reference(target = "(&(type=book))") private StoreService storeService;
 	
 	@Activate public void startUp() {
 		System.out.println(storeService);

@@ -8,4 +8,5 @@ Import-Package: org.javacream.books.warehouse.api,
  org.javacream.isbngenerator,
  org.javacream.storeservice.api,
  org.osgi.framework;version="1.8.0"
-Bundle-Activator: org.javacream.books.warehouse.osgi.BooksServiceActivator
+Service-Component: OSGI-INF/org.javacream.books.warehouse.business.MapBooksService.xml
+Bundle-ActivationPolicy: lazy

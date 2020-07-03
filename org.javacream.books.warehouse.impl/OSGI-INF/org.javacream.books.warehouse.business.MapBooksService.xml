@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.3.0" name="org.javacream.books.warehouse.business.MapBooksService">
+   <service>
+      <provide interface="org.javacream.books.warehouse.api.BooksService"/>
+   </service>
+   <reference cardinality="1..1" field="isbnGenerator" interface="org.javacream.isbngenerator.IsbnGenerator" name="isbnGenerator" target="(type=sequence)"/>
+   <reference cardinality="1..1" field="storeService" interface="org.javacream.storeservice.api.StoreService" name="storeService" target="(type=book)"/>
+   <implementation class="org.javacream.books.warehouse.business.MapBooksService"/>
+</scr:component>
