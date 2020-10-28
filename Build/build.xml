@@ -1,18 +1,14 @@
 <project default="all">
-	<property name="osgi-runtime.dir" value="C:/_training/tools/osgi-runtime/bin" />
-	<!--
-	<property name="deploy.dist.dir" value="${osgi-runtime.dir}/load" />
-	-->
-	<property name="deploy.dist.dir" value="c:/_training/deploy" />
-	
+
+	<property name="deploy.dist.dir" value="/home/rainer/deploy" />
 	<target name="all">
 		<delete failonerror="false">
 			<fileset dir="." includes="${file.name}" />
 		</delete>
-		<jar destfile="${file.name}" manifest="META-INF/MANIFEST.MF">
+		<jar destfile="${file.name}" manifest="META-INF/MANIFEST.MF" >
 			<zipfileset dir="bin" includes="**/*.*" />
-			<zipfileset dir="lib" includes="*.jar" prefix="lib" />
-			
+			<zipfileset dir="lib" includes="*.jar" prefix="lib" erroronmissingdir="false"/>
+			<zipfileset dir="OSGI-INF" includes="*.xml" prefix="OSGI-INF" erroronmissingdir="false"/>
 		</jar>
 		<copy todir="${deploy.dist.dir}" overwrite="true">
 			<fileset dir="." includes="${file.name}">
