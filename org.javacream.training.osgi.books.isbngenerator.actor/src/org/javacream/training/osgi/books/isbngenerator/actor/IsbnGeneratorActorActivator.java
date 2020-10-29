@@ -18,8 +18,9 @@ public class IsbnGeneratorActorActivator implements BundleActivator{
 		IsbnGenerator isbnGenerator = IsbnGenerator.create();
 		System.out.println(isbnGenerator.getClass().getName());
 		executorService = Executors.newSingleThreadScheduledExecutor();
-		executorService.scheduleAtFixedRate(() -> System.out.println(isbnGenerator.next()), 0, 1, TimeUnit.SECONDS);
+		executorService.scheduleAtFixedRate(() -> System.out.println(isbnGenerator.next()), 0, 5, TimeUnit.SECONDS);
 		isbnGenerator.getClass().getMethod("setPrefix", String.class).invoke(isbnGenerator, "Reflection");
+		//Class.forName("org.javacream.books.isbngenerator.impl.RandomIsbnGenerator"); //ClassNotFoundException
 	}
 
 	@Override

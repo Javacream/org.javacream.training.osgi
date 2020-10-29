@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.javacream.training.store.impl
+Bundle-SymbolicName: org.javacream.training.store.impl
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.javacream.training.store.impl
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Import-Package: org.javacream.training.store.api,
+ org.osgi.framework;version="1.5.0"
+Bundle-Activator: org.javacream.training.store.osgi.StoreServiceImplActivator
