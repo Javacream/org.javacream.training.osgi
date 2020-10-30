@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.javacream.training.osgi.store.actor
+Bundle-SymbolicName: org.javacream.training.osgi.store.actor
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.javacream.training.osgi.store.actor.StoreActorActivator
+Bundle-Vendor: Javacream
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: org.javacream.training.osgi.store.actor
+Import-Package: org.javacream.training.store.api,
+ org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
