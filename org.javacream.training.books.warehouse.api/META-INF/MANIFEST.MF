@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.javacream.training.books.warehouse.api
+Bundle-SymbolicName: org.javacream.training.books.warehouse.api
+Bundle-Version: 1.0
+Bundle-Vendor: Javacream
+Automatic-Module-Name: org.javacream.training.books.warehouse.api
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.javacream.training.books.warehouse.api
