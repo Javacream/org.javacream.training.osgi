@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: com.javacream.training.osgi.store.impl
 Bundle-SymbolicName: com.javacream.training.osgi.store.impl
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.0
 Bundle-Activator: com.javacream.training.osgi.store.impl.Activator
 Bundle-Vendor: JAVACREAM
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

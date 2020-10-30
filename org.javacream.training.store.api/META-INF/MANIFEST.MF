@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.javacream.training.store.api
 Bundle-SymbolicName: org.javacream.training.store.api
-Bundle-Version: 1.0.0
+Bundle-Version: 1.0
 Bundle-Vendor: Javacream
 Automatic-Module-Name: org.javacream.training.store.api
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
