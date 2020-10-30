@@ -16,6 +16,7 @@ public class IsbnGeneratorActivator implements BundleActivator {
 	public void start(BundleContext bundleContext) throws Exception {
 
 		serviceRegistry = bundleContext.registerService(IsbnGenerator.class, new SequenceIsbnGenerator(), new Hashtable<>());
+		System.out.println("Registering service IsbnGenerator done");
 	}
 
 	@Override

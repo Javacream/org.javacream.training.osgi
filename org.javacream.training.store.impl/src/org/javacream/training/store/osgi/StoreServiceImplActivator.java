@@ -22,7 +22,7 @@ public class StoreServiceImplActivator implements BundleActivator {
 		filterForSimpleStoreService.put("type", "simple");
 		VerySimpleStoreService verySimpleStoreService = new VerySimpleStoreService();
 		Dictionary<String, String> filterForVerySimpleStoreService = new Hashtable<>();
-		filterForSimpleStoreService.put("type", "very_simple");
+		filterForVerySimpleStoreService.put("type", "very_simple");
 		
 		serviceRegistrationForSimple = bundleContext.registerService(StoreService.class, simpleStoreService, filterForSimpleStoreService);
 		serviceRegistrationForVerySimple = bundleContext.registerService(StoreService.class, verySimpleStoreService, filterForVerySimpleStoreService);
