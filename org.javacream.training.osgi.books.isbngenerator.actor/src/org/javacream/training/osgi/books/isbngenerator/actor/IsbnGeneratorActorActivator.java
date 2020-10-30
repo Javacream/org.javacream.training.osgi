@@ -13,9 +13,10 @@ public class IsbnGeneratorActorActivator implements BundleActivator{
 	private ScheduledExecutorService executorService;
 
 	@Override
-	public void start(BundleContext arg0) throws Exception {
+	public void start(BundleContext bundleContext) throws Exception {
 		System.out.println("Starting...");
-		IsbnGenerator isbnGenerator = IsbnGenerator.create();
+		
+		IsbnGenerator isbnGenerator = bundleContext.getService(bundleContext.getServiceReferences(IsbnGenerator.class, null).iterator().next());
 		System.out.println(isbnGenerator.getClass().getName());
 		executorService = Executors.newSingleThreadScheduledExecutor();
 		executorService.scheduleAtFixedRate(() -> System.out.println(isbnGenerator.next()), 0, 5, TimeUnit.SECONDS);

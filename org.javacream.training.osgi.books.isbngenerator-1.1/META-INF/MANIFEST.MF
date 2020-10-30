@@ -7,3 +7,4 @@ Bundle-Vendor: Javacream
 Automatic-Module-Name: org.javacream.training.osgi.books.isbngenerator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: org.javacream.books.isbngenerator;version="1.1.0"
+Import-Package: org.osgi.framework;version="1.5.0"
